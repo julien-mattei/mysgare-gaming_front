@@ -1,0 +1,23 @@
+
+
+
+.home_container {
+    padding: .5rem 2rem;
+
+}
+
+.game-vote {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    article {
+        width: 30%;
+        flex-direction: column;
+
+        img {
+            width: 100%;
+        }
+    }
+}

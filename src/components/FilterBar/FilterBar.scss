@@ -1,0 +1,20 @@
+@use '../../styles/variables.scss';
+
+.filter {
+    display:flex;
+    justify-content: space-between;
+    padding: .5rem 3.5rem;
+   
+
+    .button {
+        appearance: none;
+        width: 150px;
+        text-align: center;
+        padding: .5rem 0;
+        border-radius: 50px;
+        border: 1px solid variables.$secondary-color;
+        background-color: variables.$other-color;
+        color: variables.$secondary-color;
+        font-size: medium;
+    }
+}

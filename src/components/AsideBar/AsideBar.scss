@@ -1,0 +1,35 @@
+@use '../../styles/variables.scss';
+
+
+
+    
+
+   
+
+    .logo--rounded {
+        width: 100%;
+        border-radius: 75%;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        a{
+            width: 100%;
+            padding: 1rem;
+            color: variables.$primary-color;
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        a:hover {
+            width: 100%;
+            background-color: variables.$other-color;
+            color: variables.$secondary-color;
+        }
+    }
+
