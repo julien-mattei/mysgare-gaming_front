@@ -1,32 +1,26 @@
 import './Home.scss';
-import { Header } from "../../components/Header/Header";
-import { Footer } from '../../components/Footer/Footer';
+import { CardGame } from '../../components/CardGames/CardGame';
+import { useGamesToVoted} from '../../hooks/use.games';
 
 export function Home() {
-
+    const { games, gamesLoad } = useGamesToVoted();
     const textLong = "Bienvenue sur le site de Mysgare Gaming, ici tu trouveras la liste de mes jeux, des stats sur mes jeux. Mais aussi la possibilité de voter pour les prchains jeux a venir"
-
+    if (!gamesLoad){
+         return <p>Chargement des jeux...</p>;
+    }
     return (
         <main>
-            <Header title="Mysgare Gaming" text={textLong}/>
-            <section className='home_container'>
+            <div className='home_container'>
                 <h2>Vote pour le prochain jeu</h2>
                 <div className='game-vote'>
-                    <article>
-                        <img src="/image_test.webp" alt="" />
-                        <button>voter</button>
-                    </article>
-                    <article>
-                        <img src="/image_test.webp" alt="" />
-                        <button>voter</button>
-                    </article>
-                    <article>
-                        <img src="/image_test.webp" alt="" />
-                        <button>voter</button>
-                    </article>
+                    {games.map((game)=> 
+                        <div className="card-vote" key={game.id}>
+                            <CardGame title={game.title} cover={game.cover_url} coverName={game.cover_name}/>
+                        <button type="submit">Voter</button>
+                    </div>
+                    )}
                 </div>
-            </section>
-            <Footer/>
+            </div>
          </main>   
     )
 }

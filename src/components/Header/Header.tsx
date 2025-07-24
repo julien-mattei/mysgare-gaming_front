@@ -1,35 +1,20 @@
-import { useLocation } from 'react-router';
+import { NavLink } from 'react-router';
 import './Header.scss';
-import { FilterBar } from '../FilterBar/FilterBar';
 
-interface HeaderProps {
-  title: string;
-  text: string;
-}
-
-export function Header({title, text}: HeaderProps) {
-    const location = useLocation();
-
-    console.log(location.pathname)
+export function Header(){
 
     return (
-        <header className={location.pathname === "/" ? 'header--home' : 'header--default'}>
-            {location.pathname === "/gamelist" || location.pathname === "/runlist" ?
-                <section className='header_default--filter'>
-                    <FilterBar/>
-                </section>:
-                <></>
-            }
-            <section className='header_title'>
-                <h1>{title}</h1>
-                <p>{text}</p>
+        <aside>
+            <p>Mysgare Gaming</p>
+            <nav className='aside_nav'>
+                <NavLink to="/" className='aside_nav--button button'>Home</NavLink>
+                <NavLink to="/gamelist" className='aside_nav--button button'>Jeux</NavLink> 
+                <NavLink to="/runlist" className='aside_nav--button button'>Runs</NavLink> 
+                <NavLink to="#" className='aside_nav--button button'>Stats</NavLink>  
+            </nav>
+            <section>
+                <NavLink to="#" className='button'>Connexion</NavLink> 
             </section>
-            {location.pathname === "/" &&
-                <section className='header_image'>
-                    <img src="/image_test.webp" alt="" className='header_image--cover'/>
-                    <p>Jeu en cours sur la chaine</p>
-                </section>
-            }
-        </header>
+        </aside>
     )
 }

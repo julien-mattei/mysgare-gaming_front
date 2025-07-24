@@ -1,0 +1,33 @@
+@use '../../styles/variables.scss';
+
+.gamelist{
+    width: 100%;
+    display:grid;
+    grid-template-columns: repeat(8, 200px);
+    grid-template-rows: repeat(2, 270px);
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+
+    @media (min-width:1921px){
+        grid-template-columns: repeat(8, 275px);
+        grid-template-rows: repeat(2, 345px);
+    }
+    .game-card {
+       
+        overflow: hidden;
+        box-shadow: 0 4px 8px variables.$secondary-color;
+
+        a {
+            color: variables.$secondary-color;
+        }
+    }
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
