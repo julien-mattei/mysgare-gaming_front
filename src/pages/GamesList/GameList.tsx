@@ -1,21 +1,16 @@
 import './GameList.scss';
 import { CardGame } from '../../components/CardGames/CardGame';
 import { useGamesPaginated } from '../../hooks/use.games';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router';
 
-
-
 export function GameList() {
-    
     const [page, setPage] = useState(1);
-    const [limit, setLimit] = useState(16)
-
+    const [limit, setLimit] = useState(12)
     const{games, gamesLoad} = useGamesPaginated({page, limit})
     console.log(games)
     const handleNext = () => setPage((p) =>  p + 1);
     const handlePrev = () => setPage((p) => Math.max(1, p - 1));
-
     const gamesDatas = games.gamesDetails
     if (gamesLoad){
         return (
@@ -27,7 +22,7 @@ export function GameList() {
                 <section className='gamelist'>
                     {gamesDatas.map((game)=> 
                         <div className="game-card" key={game.id}>
-                            <NavLink to="#">
+                            <NavLink to={`/games/${game.id}`}>
                                 <CardGame title={game.title} cover={game.cover_url} coverName={game.cover_name}/>
                             </NavLink>
                         </div>
@@ -41,5 +36,4 @@ export function GameList() {
             </main>
         )
     }
-
 }

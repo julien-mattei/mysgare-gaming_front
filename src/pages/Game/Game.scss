@@ -1,0 +1,37 @@
+@use '../../styles/variables.scss';
+
+
+
+
+.container{
+    width:100%;
+    display: flex;
+        
+    
+
+    .game-stats{
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 250px);
+        grid-template-rows: repeat(2, 250px);
+        align-items: center;
+        gap: 2rem;
+        color: variables.$secondary-color;
+        justify-content: space-around;
+
+        a {
+            color: variables.$secondary-color;
+        }
+
+        article{
+            border: 1px solid;
+            i{
+                margin: 2rem;
+            }
+        }
+
+    }
+
+}
+    
+

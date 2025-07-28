@@ -33,3 +33,30 @@ export const getCurrentGame = async () => {
     return data
 }
 
+export const getOneGame = async (id : number) => {
+    const response = await fetch(`${URL_DB}/games/${id}`);
+    if(!response.ok) {
+        throw new Error('Erreur lors du chargement des jeux')
+    }
+    const data = await response.json()
+    return data
+}
+
+export const getOneGameWithBosses = async (id:number) => {
+    const response = await fetch(`${URL_DB}/games/${id}/boss`);
+    if(!response.ok) {
+        throw new Error('Erreur lors du chargement des jeux')
+    }
+    const data = await response.json()
+    return data    
+}
+
+export const getOneGameWithTrophies = async (id:number) => {
+    const response = await fetch(`${URL_DB}/games/${id}/trophies`);
+    if(!response.ok) {
+        throw new Error('Erreur lors du chargement des jeux')
+    }
+    const data = await response.json()
+    return data    
+}
+

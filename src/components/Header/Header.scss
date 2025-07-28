@@ -8,6 +8,9 @@
         justify-content: space-between;
         border-bottom: 1px solid variables.$secondary-color ;
         padding: 1rem 5rem;
+        background-color: #3c271a;
+        position: sticky;
+        top: 0;
 
         .button {
              width: 50%;

@@ -1,0 +1,31 @@
+@use '../../styles/variables.scss';
+
+.game-info {
+    width: 48%;
+    height: 100%;
+    position: sticky;
+    top: 100px;
+
+    .game-info__img{
+        width: 50%;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            object-fit: fill;
+        }
+
+    }
+
+    .game-info__genre {
+        display:flex ;
+        justify-content: center;
+        gap: 1rem;
+
+        .genre{
+            background-color: variables.$secondary-color;
+            padding: 1rem;
+        }
+
+    }
+}

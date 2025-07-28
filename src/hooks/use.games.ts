@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { getCurrentGame, getGamesPaginated, getGamesToVoted} from "../services/games.api";
+import { getCurrentGame, getGamesPaginated, getGamesToVoted, getOneGame, getOneGameWithBosses, getOneGameWithTrophies} from "../services/games.api";
+
 
 interface ugpProps {
     page: number | string,
@@ -61,5 +62,62 @@ export function useCurrentGame() {
         }
         loadGames()
     }, [])
+    return {game, gameLoad}
+}
+
+export function useOneGame(id : number) {
+    const [game, setGame] = useState()
+    const [gameLoad, setGameLoad] = useState(false)
+
+    useEffect(() => {
+        const loadGames = async() => {
+            try {
+                const data = await getOneGame(id)
+                setGame(data)
+                setGameLoad(true)
+            } catch (error) {
+                console.log('catch/error', error);
+            }
+        }
+        loadGames()
+    }, [id])
+    return {game, gameLoad}
+}
+
+export function useOneGameWithBosses(id:number) {
+    const [game, setGame] = useState()
+    const [gameLoad, setGameLoad] = useState(false)
+
+    useEffect(() => {
+        const loadGames = async() => {
+            try {
+                const data = await getOneGameWithBosses(id)
+                setGame(data)
+                setGameLoad(true)
+            } catch (error) {
+                console.log('catch/error', error);
+            }
+        }
+        loadGames()
+    }, [id])
+    return {game, gameLoad}
+}
+
+export function useOneGameWithTrophies(id:number) {
+    const [game, setGame] = useState()
+    const [gameLoad, setGameLoad] = useState(false)
+
+    useEffect(() => {
+        const loadGames = async() => {
+            try {
+                const data = await getOneGameWithTrophies(id)
+                setGame(data)
+                setGameLoad(true)
+            } catch (error) {
+                console.log('catch/error', error);
+            }
+        }
+        loadGames()
+    }, [id])
     return {game, gameLoad}
 }
