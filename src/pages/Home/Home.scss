@@ -1,22 +1,33 @@
 @use '../../styles/variables.scss';
 
 .home_info{
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem auto;
-    
 
-
+    @media(min-width:1024px){
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem auto;
+    }
+   
     .home_info--text{
-        width: 50%;
-        text-align: left;
+        width:100%;
+        text-align: center;
+        @media(min-width:1024px){
+            width: 48%;
+            text-align: left;
+            
+        }
+
     }
     .home_info--currentGame{
-        width: 50%;
+        width: 100%;
         display: grid;
-        grid-template-columns: repeat(1, 700px);
+        grid-template-columns: repeat(1, 500px);
         grid-template-rows: repeat(1,500px);
-        justify-content: right;
+        justify-content: center;
+
+        @media(min-width:1024px){
+            width: 48%;
+        }
     }
 }
 
@@ -28,25 +39,19 @@
     .game-vote {
         margin: 2rem auto;
         display: grid;
-        grid-template-columns: repeat(4, 400px) ;
-        grid-template-rows: repeat(1, 400px);
         justify-content: space-evenly;
-        
+        grid-template-columns: repeat(1, 300px) ;
+        grid-template-rows: repeat(4, 300px);
+        row-gap: 3rem;
         @media (min-width: 1024px){
-            width:100%;
+           grid-template-columns: repeat(2, 300px) ;
+            grid-template-rows: repeat(2, 300px);
         }
-
-        .card-vote{
-            width: 100%;
-            margin: 0 auto;
-    
-            @media (min-width: 1024px){
-                width: 100%
-            }
-            @media (min-width: 1280px){
-                width: 100%;
-            }
+        @media (min-width: 1280px){
+           grid-template-columns: repeat(4, 300px) ;
+            grid-template-rows: repeat(1, 300px);
         }
+        
     }
 
 }

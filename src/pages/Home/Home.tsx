@@ -29,7 +29,7 @@ export function Home() {
                     {games.map((game)=> 
                         <div className="card-vote" key={game.id}>
                             <CardGame title={game.title} cover={game.cover_url} coverName={game.cover_name}/>
-                        <button type="submit">Voter</button>
+                            <button type="submit">Voter</button>
                     </div>
                     )}
                 </div>

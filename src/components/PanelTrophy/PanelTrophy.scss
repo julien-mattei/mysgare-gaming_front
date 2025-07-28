@@ -1,0 +1,11 @@
+@use '../../styles/variables.scss';
+
+.panel-trophy {
+    width:100%;
+    height: 100%;
+    border: 1px solid variables.$secondary-color;
+    border-radius: 15px;
+    text-align: left;
+    padding-left: .5rem;
+}
+

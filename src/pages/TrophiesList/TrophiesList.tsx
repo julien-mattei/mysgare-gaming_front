@@ -16,7 +16,7 @@ export function TrophiesList(){
             <main>
                 <div className="container">
                     <GameDetails game={game}/>
-                    <section>
+                    <section className='trophiesList'>
                         {game.trophies.map((trophy)=>
                             <PanelTrophy id={trophy.id} title={trophy.title} description={trophy.description} typeId={trophy.type.id} type={trophy.type.name}/>
                         )}

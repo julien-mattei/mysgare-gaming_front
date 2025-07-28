@@ -1,16 +1,26 @@
 @use '../../styles/variables.scss';
 
 .game-listBoss{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    text-align: center;
+
+    @media(min-width:1024px){
+        margin-top: 5rem;
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+
+    }
+
 
     ul {
         list-style-type: none;
-        text-align: left;
 
         .boss-name{
-            padding-top: .5rem;
+            padding: 1rem;
+            border-bottom: 1px solid variables.$secondary-color;
         }
     }
 }
